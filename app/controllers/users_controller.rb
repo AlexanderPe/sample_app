@@ -38,12 +38,7 @@ def index
     flash[:success] = "User destroyed."
     redirect_to users_url
   end
-   def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
+ 
 
     def correct_user
       @user = User.find(params[:id])
@@ -52,4 +47,8 @@ def index
 def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
+    def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+  end
 end
