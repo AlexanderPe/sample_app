@@ -4,6 +4,9 @@
       <section>
         <%= render 'shared/user_info' %>
       </section>
+       <section>
+        <%= render 'shared/stats' %>
+      </section>
       <section>
         <%= render 'shared/micropost_form' %>
       </section>
@@ -16,10 +19,10 @@
 <% else %>
   <div class="center hero-unit">
     <%= link_to image_tag("r.png", alt: "Rocket") %>
-  <h1>flat scroll</h1>
+  <h1>PRGD</h1>
 
   <h2>
-    Hi. This is flat`s micro blog. Enjoy.
+    Ziga-yo.
   </h2>
  <% if signed_in? %>
  <% else %>
